@@ -1,0 +1,75 @@
+show dbs;
+show collections;
+
+db.employees.find({ "_id" : ObjectId("5bf70748ca5930f0e3cd157e") }).pretty();
+
+db.createCollection('employees');
+db.employees.insert({
+  name: 'John', salary: 15000
+});
+
+db.employees.insertMany([
+  { name: 'John', salary: 15000 },
+  { name: 'Susan', salary: 14000 }
+]);
+
+db.employees.find({});
+
+db.employees.find( { name: 'John' });
+
+db.employees.find({ 'department.name': 'HR' });
+db.employees.find({ 'department.name': 'HR' }).count(); // same as: db.employees.count({ 'department.name': 'HR' });
+
+db.employees.find({
+  $and: [
+    { 'department.name': 'HR' },
+    { salary: { $gt: 110000 }}
+  ]
+});
+
+db.employees.find({
+  $or: [
+    { 'department.name': 'HR' },
+    { 'department.name': 'Finance' }
+  ]
+});
+
+db.employees.find({}, { name: 1 });
+db.employees.find({}, { name: 1, _id: 0 });
+
+db.employees.find({ salary: { $gt: 119000 } }, { name: 1, salary: 1, _id: 0 });
+db.employees.find({ salary: { $gt: 119000 } }, { name: 1, salary: 1, _id: 0 }).sort({ salary: 1 });
+db.employees.find({ salary: { $gt: 119000 } }, { name: 1, salary: 1, _id: 0 }).sort({ salary: -1 });
+
+db.employees.insert({
+  name: 'John', salary: 15000
+});
+
+db.employees.find({}).sort({ _id:-1 }).limit(1).pretty();
+
+// replace entire document
+db.employees.update({ _id: id }, { name: 'Adam'} );
+
+// set part of the document (update specific fields)
+db.employees.update({ _id: id }, { $set: { name: 'Steve' } });
+
+// update, otherwise insert if doesn't exist
+db.employees.update(
+   { name: 'John' },
+   {
+     name: 'John',
+     salary: 24000
+   },
+   { upsert: true }
+);
+
+// update by matching query
+db.employees.update(
+   { salary: { $eq: 24000 } },
+   { $set: { name: 'Jack' } },
+   { multi: true }
+);
+
+
+db.employees.aggregate([{ $group: { _id: "$department.name", salary: { $avg: "$salary" } }}]);
+db.employees.aggregate([{ $group: { _id: "$department.name", salary: { $min: "$salary" } }}]);

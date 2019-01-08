@@ -1,0 +1,34 @@
+[{
+  "id": 1,
+  "name": "Nerta McGarvie",
+  "address": "30140 Pleasure Hill Indonesia ",
+  "email": "nmcgarvie0@ustream.tv",
+  "hired": "2018-05-18",
+  "dob": "1969-12-05",
+  "salary": "£189543.90",
+  "bonus": 20,
+  "photo": "https://res.cloudinary.com/tamas-demo/image/upload/project/business-woman-3.jpg",
+  "department": 1
+}, {
+  "id": 2,
+  "name": "Yvette Muat",
+  "address": "406 Cordelia Parkway China ",
+  "email": "ymuat1@wunderground.com",
+  "hired": "2018-04-23",
+  "dob": "1998-12-24",
+  "salary": "£177336.45",
+  "bonus": 10,
+  "photo": "https://res.cloudinary.com/tamas-demo/image/upload/project/business-woman-2.jpg",
+  "department": 12
+}, {
+  "id": 3,
+  "name": "Eal Scotchforth",
+  "address": "27 Loeprich Parkway Philippines 4806",
+  "email": "escotchforth2@hostgator.com",
+  "hired": "2018-02-12",
+  "dob": "1992-11-07",
+  "salary": "£138254.20",
+  "bonus": 7,
+  "photo": "https://res.cloudinary.com/tamas-demo/image/upload/project/business-man-3.jpg",
+  "department": 9
+}]

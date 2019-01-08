@@ -1,0 +1,24 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="author" content="Tamas Piros">
+  <link rel="stylesheet" href="">
+  <script>
+    fetch('http://localhost:3000/api/employees')
+    .then(response => response.json())
+    .then(data => {
+      console.log(data);
+    })
+    .catch(error => console.error(error));
+  </script>
+</head>
+
+<body>
+  <h1>List of employees</h1>
+
+</body>
+</html>

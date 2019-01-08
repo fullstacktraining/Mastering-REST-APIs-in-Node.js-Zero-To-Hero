@@ -1,0 +1,17 @@
+nav
+  ul
+    li
+      a(href='/') Home
+    if !user
+      li
+        a(href='/register') Register
+    if user
+      li
+        a(href='/profile') Profile
+  ul
+    if !user
+      li
+        a(href='/login') Log In
+    if user
+      li
+        a(href='/logout') Log Out

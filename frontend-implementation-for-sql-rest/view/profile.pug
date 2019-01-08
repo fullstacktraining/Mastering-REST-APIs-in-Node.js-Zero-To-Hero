@@ -1,0 +1,27 @@
+extends layout
+block content
+  script.
+    const jwt = document.cookie.split('=')[1];
+    fetch('http://localhost:3000/api/employees/12', {
+      headers: {
+        Authorization: `Bearer ${jwt}`
+      }
+    })
+      .then(response => response.json())
+      .then(data => {
+        const name = document.getElementById('name');
+        const salary = document.getElementById('salary');
+        name.innerHTML = data.name;
+        salary.innerHTML = data.salary;
+      })
+      .catch(error => console.error(error));
+  h1 Profile
+  p Hello and welcome back #{user.username}!
+  p Here's your requested information.
+  div
+  h2
+    | Information about 
+    span#name 
+  p
+    | Salary is: 
+    span#salary
