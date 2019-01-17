@@ -1,6 +1,6 @@
 # Mastering REST APIs in Node.js: Zero To Hero
 
-This repository contains the course material.
+This repository contains the course material for the **[Mastering REST APIs in Node.js: Zero To Hero](https://www.fullstacktraining.com/courses/mastering-rest-apis-in-node-js-zero-to-hero)** course.
 
 ## Structure:
 * dotenv: contains an introduction for dotenv (as seen in Appendix B)
